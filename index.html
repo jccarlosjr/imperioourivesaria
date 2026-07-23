@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Império Ourivesaria</title>
+  <meta name="description"
+    content="Império Ourivesaria — Joias em 3D, Confecção de Joias, Conserto e Polimento. Tradição e sofisticação desde 2017.">
+  <meta name="keywords"
+    content="Império Ourivesaria, Joias em 3D, Confecção de Joias, Conserto de Joias, Polimento de Joias, Ourivesaria">
+  <meta name="author" content="Império Ourivesaria">
+
+  <meta property="og:title" content="Império Ourivesaria | Tradição em Ouro">
+  <meta property="og:description"
+    content="Império Ourivesaria — Joias em 3D, Confecção, Conserto e Polimento. Atendimento exclusivo via WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imperiojoias.online/">
+  <meta property="og:image" content="logo.jpeg">
+
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero-home {
+      padding: 6rem 0 4rem 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold-primary);
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-family: var(--font-sub);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .hero-title span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-tag {
+      font-family: var(--font-sub);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--text-main);
+    }
+
+    /* Grid de Serviços */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-gold);
+      background: var(--bg-card-hover);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-gold);
+      background: var(--bg-card-hover);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      margin: 0 auto 1.2rem auto;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(18, 22, 31, 0.95) 0%, rgba(11, 14, 23, 0.95) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-bottom: 5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Fixo -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand" title="Império Ourivesaria">
+        <img src="logo.jpeg" alt="Logo Império Ourivesaria" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">Império</span>
+          <span class="brand-subtitle">Ourivesaria</span>
+        </div>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação Principal">
+        <a href="index.html" class="nav-link active" aria-current="page">Início</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="termos-de-servico.html" class="nav-link">Termos</a>
+        <a href="politica-de-privacidade.html" class="nav-link">Privacidade</a>
+      </nav>
+
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20entrar%20em%20contato%20com%20a%20Imp%C3%A9rio%20Ourivesaria."
+        target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z" />
+        </svg>
+        <span>Fale no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Home Section -->
+  <section class="hero-home container">
+    <div class="hero-badge">
+      ✦ Desde 2017 • Império Ourivesaria
+    </div>
+    <h1 class="hero-title">
+      Tradição e Sofisticação em <span>Ouro</span>
+    </h1>
+    <p class="hero-desc">
+      Sua marca de confiança. Atendimento exclusivo, transparência e o compromisso com a excelência que você merece.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento."
+        target="_blank" rel="noopener" class="btn btn-gold">
+        Entrar em Contato
+      </a>
+      <a href="#servicos" class="btn btn-outline">
+        Nossos Serviços
+      </a>
+    </div>
+  </section>
+
+  <!-- Categoria de Serviços -->
+  <section id="servicos" class="container">
+    <div class="section-title-wrap">
+      <span class="section-tag">Especialidades</span>
+      <h2 class="section-title">Nossos Serviços</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Joias em 3D -->
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Joias%20em%203D"
+        target="_blank" rel="noopener" class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
+        </div>
+        <h3 class="service-name">Joias em 3D</h3>
+        <p class="service-desc">Modelagem e design tridimensional para visualização e precisão de peças exclusivas.</p>
+      </a>
+
+      <!-- Confecção de Joias -->
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Confec%C3%A7%C3%A3o%20de%20Joias"
+        target="_blank" rel="noopener" class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2l3 6 6 1-4.5 4.5 1 6.5-5.5-3-5.5 3 1-6.5L3 9l6-1z" />
+          </svg>
+        </div>
+        <h3 class="service-name">Confecção de Joias</h3>
+        <p class="service-desc">Produção e confecção artesanal sob medida com alto padrão de acabamento e sofisticação.
+        </p>
+      </a>
+
+      <!-- Conserto -->
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Conserto%20de%20Joias"
+        target="_blank" rel="noopener" class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
+        </div>
+        <h3 class="service-name">Conserto</h3>
+        <p class="service-desc">Reparos técnicos, soldas e restauração especializada para recuperar suas peças
+          preciosas.</p>
+      </a>
+
+      <!-- Polimento -->
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Polimento"
+        target="_blank" rel="noopener" class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.5-6.5l-2.1 2.1m-8.8 8.8l-2.1 2.1m0-13l2.1 2.1m8.8 8.8l2.1 2.1" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+        </div>
+        <h3 class="service-name">Polimento</h3>
+        <p class="service-desc">Limpeza profunda, polimento e renovação do brilho original e acabamento da sua peça.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Diferenciais / Sobre a Marca -->
+  <section id="sobre" class="container">
+    <div class="section-title-wrap">
+      <span class="section-tag">Institucional</span>
+      <h2 class="section-title">Império Ourivesaria</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L1 21h22L12 2zm0 3.45L19.8 19H4.2L12 5.45z" />
+          </svg>
+        </div>
+        <h3>Tradição desde 2017</h3>
+        <p>Trajetória sólida edificada no respeito, integridade e relacionamento de confiança com nossos clientes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <h3>Qualidade & Credibilidade</h3>
+        <p>Compromisso rigoroso com os mais elevados padrões de excelência e apresentação institucional.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </div>
+        <h3>Atendimento Direto</h3>
+        <p>Canal de comunicação ágil e personalizado para responder suas dúvidas e atender com atenção.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
+        <h3>Conformidade Legal</h3>
+        <p>Transparência integral no relacionamento comercial com termos e políticas claras de privacidade.</p>
+      </div>
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+      <h2>Deseja falar conosco?</h2>
+      <p>Estamos prontos para lhe atender. Clique no botão abaixo e inicie uma conversa diretamente via WhatsApp.</p>
+      <a href="https://wa.me/557998228440?text=Ol%C3%A1!%20Gostaria%20de%20iniciar%20um%20atendimento." target="_blank"
+        rel="noopener" class="btn btn-gold">
+        Iniciar Atendimento no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Coluna 1: Marca & Sobre -->
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <img src="logo.jpeg" alt="Logo Império Ourivesaria" class="brand-logo-img">
+            <div class="brand-text">
+              <span class="brand-title">Império</span>
+              <span class="brand-subtitle">Ourivesaria</span>
+            </div>
+          </a>
+          <p>
+            Tradição, sofisticação e excelência. Desde 2017 construindo uma história de confiança e atendimento
+            exclusivo.
+          </p>
+          <span class="footer-cnpj">CNPJ: 28.994.191/0001-73</span>
+        </div>
+
+        <!-- Coluna 2: Navegação / Páginas Legais -->
+        <div>
+          <h3 class="footer-title">Páginas Legais</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="termos-de-servico.html">Termos de Serviço</a></li>
+            <li><a href="politica-de-privacidade.html">Política de Privacidade (LGPD)</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Atendimento & Contato -->
+        <div>
+          <h3 class="footer-title">Atendimento</h3>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z" />
+              </svg>
+              <a href="https://wa.me/557998228440" target="_blank" rel="noopener">(79) 9822-8440</a>
+            </li>
+            <li class="footer-info-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:alyson_deyvid19@hotmail.com">alyson_deyvid19@hotmail.com</a>
+            </li>
+            <li class="footer-info-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>Seg a Sex: 8h às 17h</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Nossa Loja / Endereço -->
+        <div>
+          <h3 class="footer-title">Nossa Loja</h3>
+          <div class="footer-info-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-top: 2px;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="footer-address-text">
+              <strong>R. Urquiza Leal, 990</strong><br>
+              Loja 07 (Pav. Superior)<br>
+              Grageru — Aracaju/SE<br>
+              <span style="font-size: 0.82rem; opacity: 0.8;">CEP 49025-000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Império Ourivesaria. Todos os direitos reservados.</p>
+        <p>Landing Page Institucional • Império Ourivesaria</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
